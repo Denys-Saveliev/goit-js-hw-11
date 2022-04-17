@@ -50,7 +50,7 @@ p {
 .search-form input {
    width: 30%;
    border-radius: 4px 0 0 4px;
-   border: 1px solid #1eeb9c;
+   border: 1px solid #ffe4e1;
    outline: none;
    background-color: #fff;
    padding: 8px 10px;
@@ -63,7 +63,7 @@ p {
    align-items: center;
    min-width: 40px;
    border: none;
-   background-color: #1eeb9c;
+   background-color: #ffe4e1;
    border-radius: 0 4px 4px 0;
    cursor: pointer;
    transition: all 0.5s;
@@ -105,6 +105,7 @@ p {
    margin-left: -20px;
    padding-top: 60px;
    justify-content: center;
+
 }
 
 .gallery-link {
@@ -149,48 +150,4 @@ p {
 
 .info-item:not(:first-child) {
    margin-left: 5px;
-}
-
-.load-more-button {
-   display: block;
-   margin: 25px auto 0 auto;
-   padding: 8px 20px;
-   border: none;
-   border-radius: 5px;
-   background-color: #fa8072;
-   font: inherit;
-   color: white;
-   cursor: pointer;
-   transition: all 0.5s;
-}
-
-.on-top-button {
-   position: fixed;
-   bottom: 3vh;
-   right: 1vw;
-   z-index: 1000;
-   width: 50px;
-   height: 50px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border-radius: 50%;
-   background: #fa8072;
-   color: white;
-   cursor: pointer;
-   opacity: 0;
-   visibility: hidden;
-   transition: all 0.5s;
-}
-
-.on-top-button--visible {
-   opacity: 1;
-   visibility: visible;
-}
-
-.load-more-button:hover,
-.on-top-button:hover {
-   background-color: #cd5c5c;
-   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-   transition: all 0.5s;
 }
