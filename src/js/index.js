@@ -15,7 +15,7 @@ let lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDe
 const pixabayApiService = new PixabayApiService();
 
 const observer = new IntersectionObserver(onEntry, {
-  rootMargin: '150px',
+  rootMargin: '100px',
 });
 
 refs.formRef.addEventListener('submit', onSearch);
@@ -56,13 +56,12 @@ function onEntry(entries) {
   entries.map(entry => {
     if (!entry.isIntersecting) {
       return;
-    }
-
-    observer.unobserve(entry.target);
+    }   
 
     if (!pixabayApiService.endCurrentSearchQuery()) {
       pixabayApiService.getImage().then(result => {
         makeMarkupgallery(result.data.hits);
+         observer.unobserve(entry.target);
         pixabayApiService.incrementPage();
       });
     } else {
