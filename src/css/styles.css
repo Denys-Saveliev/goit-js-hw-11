@@ -1,153 +1,115 @@
-* {
-   box-sizing: border-box;
-}
-
 body {
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   font-size: 1em;
-   line-height: 1.5;
-   color: #000000;
-   margin: 0;
+   padding: 30px 0;
+   background-color: rgb(54, 50, 50);
 }
 
-a {
-   text-decoration: none;
-}
-
-p {
-   margin: 0;
-}
-
-.visualy-hidden {
-   position: absolute;
-   width: 1px;
-   height: 1px;
-   margin: -1px;
-   padding: 0;
-   overflow: hidden;
-   border: 0;
-   clip: rect(0 0 0 0);
-}
-
-.search-container {
+img {
+   display: block;
+   object-fit: cover;
    width: 100%;
-   padding-top: 5px;
-   padding-bottom: 5px;
-   position: fixed;
-   background-color: #fa8072;
-   box-shadow: 0px 2px 5px 0px #ffa07a;
+   height: 200px;
 }
 
 .search-form {
-   width: 100%;
    display: flex;
+   flex-direction: row;
    justify-content: center;
+   margin-bottom: 20px;
 }
 
-.search-form input {
-   width: 30%;
-   border-radius: 4px 0 0 4px;
-   border: 1px solid #ffe4e1;
-   outline: none;
-   background-color: #fff;
-   padding: 8px 10px;
-   font: inherit;
-}
-
-.search-form button {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-width: 40px;
+.search-form>input {
+   font-size: 15px;
+   width: 200px;
+   height: 40px;
    border: none;
-   background-color: #ffe4e1;
-   border-radius: 0 4px 4px 0;
+   border-radius: 5px;
+   background-color: burlywood;
+}
+
+input::placeholder {
+   color: dimgray;
+}
+
+input[type=text]:focus {
+   background-color: rgb(168, 132, 84);
+}
+
+button {
+   font-size: 18px;
+   width: 80px;
    cursor: pointer;
-   transition: all 0.5s;
+   color: dimgray;
+   padding: 5px;
+   border-radius: 5px;
+   border: none;
+   background-color: burlywood;
+   margin-left: 10px;
+   transition: color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.search-form button:hover,
-.search-form button:focus {
-   background-color: #fff5ee;
-   transition: all 0.5s;
-}
+button:hover,
+button:focus {
+   color: rgb(255, 246, 246);
+   background-color: rgb(168, 132, 84);
 
-.gallery-container {
-   padding-left: 15px;
-   padding-right: 15px;
-   padding-bottom: 25px;
-
-   @media screen and (min-width: 480px) {
-      width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-   }
-
-   @media screen and (min-width: 768px) {
-      width: 768px;
-   }
-
-   @media screen and (min-width: 1440px) {
-      width: 1440px;
-   }
-}
-
-.gallery,
-.info {
-   display: flex;
-   flex-wrap: wrap;
 }
 
 .gallery {
-   margin-left: -20px;
-   padding-top: 60px;
+   display: grid;
    justify-content: center;
-
+   grid-gap: 15px;
+   grid-template-columns: repeat(auto-fill, 300px);
+   margin-bottom: 40px;
 }
 
 .gallery-link {
-   margin-top: 20px;
-   margin-left: 20px;
-   min-width: 320px;
-   flex-basis: calc((100% - 80px) / 4);
-   border: 1px solid rgb(241, 238, 238);
-   border-radius: 10px;
-   overflow: hidden;
-   transition: all 0.3s;
+   text-decoration: none;
+   transition: trasform 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-link:hover,
 .gallery-link:focus {
-   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.photo-card {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-evenly;
-}
-
-.photo-card-image {
-   display: block;
-   height: 30vh;
-   object-fit: cover;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   transform: scale(1.07);
 }
 
 .info {
-   padding: 10px;
-   justify-content: space-around;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   padding: 5px 20px;
+   background-color: burlywood;
 }
 
 .info-item {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   color: black;
+   font-size: 12px;
+   color: rgb(38, 146, 247);
+   margin: 0;
 }
 
-.info-item:not(:first-child) {
-   margin-left: 5px;
+.info-item:nth-child(-n + 2) {
+   margin-bottom: 5px;
+}
+
+.photo-card {
+   overflow: hidden;
+   border: 1px solid rgb(238, 229, 107);
+   border-radius: 10px;
+}
+
+.info-item>b {
+   font-size: 15px;
+   color: dimgray;
+}
+
+.load-more {
+   display: block;
+   margin: 0 auto;
+   width: 100px;
+   padding: 10px;
+   color: rgb(236, 221, 2);
+}
+
+.hidden {
+   display: none;
 }
